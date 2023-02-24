@@ -3,6 +3,7 @@ import './App.css';
 import foods from './foods.json';
 // import { Card, Row, Col, Divider, Input, Button } from 'antd';
 import { useState } from "react";
+import FoodBox from './components/FoodBox';
 
 
 
@@ -13,15 +14,7 @@ function App() {
   return (
     <div>
 
-      {foodArray.map((food) => {
-
-        return (
-          <div>
-            <p>{food.name}</p>
-            <img src={food.image} width={200} alt="food" />
-          </div>
-        );
-      })}
+      <FoodBox food={foodArray} />
     </div>
   );
 }
