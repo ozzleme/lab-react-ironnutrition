@@ -5,11 +5,13 @@ function FoodBox({ food }) {
 
     return (
 
-        <div>
+        <div className="food-container">
+            
 
             {food.map((oneFood) => {
 
                 return (
+                   <div className="food-card">
                     <Col>
                         <Card
                             title={oneFood.name}
@@ -19,11 +21,12 @@ function FoodBox({ food }) {
                             <p>Calories: {oneFood.calories}</p>
                             <p>Servings: {oneFood.servings}</p>
                             <p>
-                                <b>Total Calories: {oneFood.servings * oneFood.calories} </b>
+                                <b>Total Calories: {oneFood.servings * oneFood.calories} kcal </b>
                             </p>
                             <Button type="primary"> Delete </Button>
                         </Card>
                     </Col>
+                    </div>
                 );
 
             })}

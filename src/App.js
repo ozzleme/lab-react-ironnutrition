@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div>
-
+      <h1>Food List</h1>
       <FoodBox food={foodArray} />
     </div>
   );
