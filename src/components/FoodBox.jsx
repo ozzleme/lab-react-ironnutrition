@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Col, Button } from 'antd';
 
-function FoodBox({ foods, search }) {
+function FoodBox({ foods, search, deleteFood }) {
+
 
     return (
         <div className="food-container">
@@ -9,9 +10,9 @@ function FoodBox({ foods, search }) {
                 .filter((oneFood) => {
                     return oneFood.name.toLowerCase().includes(search.toLowerCase());
                 })
-                .map((oneFood) => {
+                .map((oneFood, index) => {
                     return (
-                        <div className="food-card">
+                        <div key={index} className="food-card">
                             <Col>
                                 <Card
                                     title={oneFood.name}
@@ -23,7 +24,7 @@ function FoodBox({ foods, search }) {
                                     <p>
                                         <b>Total Calories: {oneFood.servings * oneFood.calories} kcal </b>
                                     </p>
-                                    <Button type="primary"> Delete </Button>
+                                    <Button type="primary" onClick={() => deleteFood(index)}> Delete </Button>
                                 </Card>
                             </Col>
                         </div>

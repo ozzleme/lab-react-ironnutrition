@@ -1,9 +1,12 @@
+import { Divider, Input } from 'antd';
+
+
 function Search({ handleSearch, search }) {
 
     return (
         <div>
-            <p>Search for a food</p>
-            <input type="text" onChange={handleSearch} value={search} placeholder="Search.." />
+            <Divider>Search</Divider>
+            <Input type="text" onChange={handleSearch} value={search} placeholder="Search.." />
         </div>
     )
 }
