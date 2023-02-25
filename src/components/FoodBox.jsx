@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col, Button } from 'antd';
 
-function FoodBox({ foods, search, deleteFood }) {
+function FoodBox({ foods, search, deleteFood }) { // {food: {name, image, calories, servings}} destructuring code for iteration 2
 
 
     return (
@@ -24,7 +24,7 @@ function FoodBox({ foods, search, deleteFood }) {
                                     <p>
                                         <b>Total Calories: {oneFood.servings * oneFood.calories} kcal </b>
                                     </p>
-                                    <Button type="primary" onClick={() => deleteFood(index)}> Delete </Button>
+                                    <Button type="primary" htmlType="submit" onClick={() => deleteFood(index)}> Delete </Button>
                                 </Card>
                             </Col>
                         </div>
@@ -33,5 +33,13 @@ function FoodBox({ foods, search, deleteFood }) {
         </div>
     );
 }
+
+/* {foodRepo.map (food => (
+    <div> 
+    <p> {food.name}</p>
+    </div>
+))}
+
+*/
 
 export default FoodBox;
